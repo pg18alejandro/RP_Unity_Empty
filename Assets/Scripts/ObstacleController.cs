@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
+    [SerializeField]
+    private float _separation;
+
     public GameObject pipe;
 
     private Vector3 lastPosition;
@@ -19,7 +22,7 @@ public class ObstacleController : MonoBehaviour
     {
         lastPosition.y = Random.Range(-0.5f, 6.5f);
         GameObject newPipe = Instantiate(pipe, lastPosition, Quaternion.identity);
-        lastPosition.x += 1.5f;
+        lastPosition.x += _separation;
     }
 
 }

@@ -7,12 +7,19 @@ public class GameDirector : MonoBehaviour
     [SerializeField]
     private PlayerController _player;
 
+    private int _score;
+
     private gState _gState = gState.StartPoint;
 
     public enum gState{
         StartPoint,
         Playing,
         Death
+    }
+
+    private void Start()
+    {
+        _score = 00;
     }
 
     private void Update()

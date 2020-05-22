@@ -246,6 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1070616606}
   - component: {fileID: 1070616605}
+  - component: {fileID: 1070616607}
   m_Layer: 0
   m_Name: GameDirector
   m_TagString: Untagged
@@ -280,6 +281,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1070616607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070616604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17aebc4d0b63e4bfbae4b889c553dfe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _separation: 4
+  pipe: {fileID: 9208456703553697585, guid: c7c359c4e4c2b4a848bf372b670bb8ec, type: 3}
 --- !u!1001 &1163293162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -287,6 +302,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6398624011769266092, guid: cf4003867541e1d4dbdadb7035219df2,
+        type: 3}
+      propertyPath: _jumpForce
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1791169854798233217, guid: cf4003867541e1d4dbdadb7035219df2,
         type: 3}
       propertyPath: m_Name
@@ -346,6 +366,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655967592058727020, guid: cf4003867541e1d4dbdadb7035219df2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655967592058727020, guid: cf4003867541e1d4dbdadb7035219df2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf4003867541e1d4dbdadb7035219df2, type: 3}
