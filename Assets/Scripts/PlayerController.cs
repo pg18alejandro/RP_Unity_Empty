@@ -11,13 +11,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _horizontalSpeed;
 
-    private Rigidbody2D _rb;
+    internal Rigidbody2D _rb;
     internal bool Playing = false;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-
     }
 
     private void Update()
@@ -34,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
         else
         {
-            transform.position = Vector2.zero;
+            _rb.isKinematic = true;
         }
     }
 }

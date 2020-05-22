@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameDirector : MonoBehaviour
 {
     [SerializeField]
     private PlayerController _player;
+
+    [SerializeField]
+    private TextMeshProUGUI _scoreText;
 
     private int _score;
 
@@ -19,11 +23,13 @@ public class GameDirector : MonoBehaviour
 
     private void Start()
     {
-        _score = 00;
+        _score = 0;
     }
 
     private void Update()
     {
+        _scoreText.text = _score.ToString();
+
         if(Input.GetKeyDown(KeyCode.Space) && _gState == gState.StartPoint)
         {
             StartGame();
@@ -33,11 +39,19 @@ public class GameDirector : MonoBehaviour
     private void StartGame()
     {
         _player.Playing = true;
+        _player._rb.isKinematic = false;
         _gState = gState.Playing;
     }
 
-    private void Death()
+    public void Death()
     {
-        
+        _player.Playing = false;
+        _player._rb.isKinematic = true;
+        _gState = gState.Death;
+    }
+
+    public void AddPoints( int point)
+    {
+        _score += point;
     }
 }
