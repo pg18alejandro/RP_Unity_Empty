@@ -22,6 +22,18 @@ public class ObstacleController : MonoBehaviour
     {
         lastPosition.y = Random.Range(-0.5f, 6.5f);
         GameObject newPipe = Instantiate(pipe, lastPosition, Quaternion.identity);
+        float spawnNumber = Random.Range(0, 100);
+        
+        if (spawnNumber >= 60)
+        {
+            newPipe.transform.GetChild(0).gameObject.SetActive(true); 
+            newPipe.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            newPipe.transform.GetChild(0).gameObject.SetActive(false); 
+            newPipe.transform.GetChild(1).gameObject.SetActive(true);
+        }
         lastPosition.x += _separation;
     }
 
